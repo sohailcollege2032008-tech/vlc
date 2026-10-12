@@ -216,7 +216,13 @@ T.Dialog {
 
                         Text { text: modelData.ep; color: JuxTheme.accent; Layout.preferredWidth: 90; font.bold: true }
                         Text { text: modelData.file; color: JuxTheme.textPrimary; Layout.fillWidth: true; elide: Text.ElideRight }
-                        Text { text: "➔"; color: JuxTheme.textSecondary }
+                        Image {
+                            width: 12
+                            height: 12
+                            source: Qt.resolvedUrl("../../../resources/icons/next.svg")
+                            fillMode: Image.PreserveAspectFit
+                            smooth: true
+                        }
                         Text { text: modelData.sub; color: "#98c379"; Layout.fillWidth: true; elide: Text.ElideRight }
                     }
                 }

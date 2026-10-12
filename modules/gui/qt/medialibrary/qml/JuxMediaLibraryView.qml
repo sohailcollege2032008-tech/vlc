@@ -42,17 +42,20 @@ Item {
             anchors.rightMargin: 16
             spacing: 12
 
-            Text {
-                text: "▲"
-                color: JuxTheme.accent
-                font.pixelSize: 18
-                font.bold: true
+            Image {
+                width: 20
+                height: 20
+                source: Qt.resolvedUrl("../../resources/icons/vlc.svg")
+                fillMode: Image.PreserveAspectFit
+                smooth: true
             }
 
-            Text {
-                text: "⋯"
-                color: JuxTheme.textSecondary
-                font.pixelSize: 16
+            Image {
+                width: 16
+                height: 16
+                source: Qt.resolvedUrl("../../resources/icons/more.svg")
+                fillMode: Image.PreserveAspectFit
+                smooth: true
             }
 
             Item { Layout.fillWidth: true }
@@ -66,9 +69,30 @@ Item {
 
             Item { Layout.fillWidth: true }
 
-            Text { text: "─"; color: JuxTheme.textSecondary; font.pixelSize: 14 }
-            Text { text: "▢"; color: JuxTheme.textSecondary; font.pixelSize: 13 }
-            Text { text: "✕"; color: JuxTheme.textSecondary; font.pixelSize: 13 }
+            RowLayout {
+                spacing: 8
+                Image {
+                    width: 12
+                    height: 12
+                    source: Qt.resolvedUrl("../../resources/icons/minimize.svg")
+                    fillMode: Image.PreserveAspectFit
+                    smooth: true
+                }
+                Image {
+                    width: 12
+                    height: 12
+                    source: Qt.resolvedUrl("../../resources/icons/maximize.svg")
+                    fillMode: Image.PreserveAspectFit
+                    smooth: true
+                }
+                Image {
+                    width: 12
+                    height: 12
+                    source: Qt.resolvedUrl("../../resources/icons/close.svg")
+                    fillMode: Image.PreserveAspectFit
+                    smooth: true
+                }
+            }
         }
     }
 
@@ -99,14 +123,14 @@ Item {
                 "+ Add item"
             ]
 
-            property var icons: [
-                "🏠",
-                "🎬",
-                "🎵",
-                "📡",
-                "📋",
-                "🕒",
-                "➕"
+            property var iconNames: [
+                "home",
+                "videos",
+                "music",
+                "network",
+                "playlists",
+                "recent",
+                "add"
             ]
 
             ColumnLayout {
@@ -129,10 +153,12 @@ Item {
                             anchors.leftMargin: 12
                             spacing: 10
 
-                            Text {
-                                text: navPane.icons[index]
-                                color: root.selectedNavIndex === index ? JuxTheme.accent : JuxTheme.textSecondary
-                                font.pixelSize: 13
+                            Image {
+                                width: 16
+                                height: 16
+                                source: Qt.resolvedUrl("../../resources/icons/" + navPane.iconNames[index] + ".svg")
+                                fillMode: Image.PreserveAspectFit
+                                smooth: true
                             }
 
                             Text {
@@ -176,8 +202,20 @@ Item {
                     anchors.rightMargin: 20
                     spacing: 12
 
-                    Text { text: "←"; color: JuxTheme.textSecondary; font.pixelSize: 14 }
-                    Text { text: "→"; color: JuxTheme.textSecondary; font.pixelSize: 14 }
+                    Image {
+                        width: 14
+                        height: 14
+                        source: Qt.resolvedUrl("../../resources/icons/previous.svg")
+                        fillMode: Image.PreserveAspectFit
+                        smooth: true
+                    }
+                    Image {
+                        width: 14
+                        height: 14
+                        source: Qt.resolvedUrl("../../resources/icons/next.svg")
+                        fillMode: Image.PreserveAspectFit
+                        smooth: true
+                    }
 
                     Text {
                         text: root.breadcrumbText
@@ -196,8 +234,20 @@ Item {
                         font.pixelSize: 12
                     }
 
-                    Text { text: "↓↑"; color: JuxTheme.textSecondary; font.pixelSize: 14 }
-                    Text { text: "㗊"; color: JuxTheme.accent; font.pixelSize: 16 }
+                    Image {
+                        width: 14
+                        height: 14
+                        source: Qt.resolvedUrl("../../resources/icons/sort.svg")
+                        fillMode: Image.PreserveAspectFit
+                        smooth: true
+                    }
+                    Image {
+                        width: 14
+                        height: 14
+                        source: Qt.resolvedUrl("../../resources/icons/grid.svg")
+                        fillMode: Image.PreserveAspectFit
+                        smooth: true
+                    }
 
                     // Search input pill
                     Rectangle {
@@ -213,7 +263,13 @@ Item {
                             anchors.rightMargin: 10
                             spacing: 6
 
-                            Text { text: "🔍"; color: JuxTheme.textSecondary; font.pixelSize: 11 }
+                            Image {
+                                width: 12
+                                height: 12
+                                source: Qt.resolvedUrl("../../resources/icons/search.svg")
+                                fillMode: Image.PreserveAspectFit
+                                smooth: true
+                            }
                             Text {
                                 text: "Search"
                                 color: JuxTheme.textSecondary
@@ -223,7 +279,13 @@ Item {
                         }
                     }
 
-                    Text { text: "⋯"; color: JuxTheme.textSecondary; font.pixelSize: 14 }
+                    Image {
+                        width: 16
+                        height: 16
+                        source: Qt.resolvedUrl("../../resources/icons/more.svg")
+                        fillMode: Image.PreserveAspectFit
+                        smooth: true
+                    }
                 }
             }
 
@@ -284,11 +346,13 @@ Item {
                                     radius: 18
                                     color: Qt.rgba(0, 0, 0, 0.5)
 
-                                    Text {
+                                    Image {
                                         anchors.centerIn: parent
-                                        text: "▶"
-                                        color: JuxTheme.textSecondary
-                                        font.pixelSize: 14
+                                        width: 14
+                                        height: 14
+                                        source: Qt.resolvedUrl("../../resources/icons/play.svg")
+                                        fillMode: Image.PreserveAspectFit
+                                        smooth: true
                                     }
                                 }
 

@@ -80,11 +80,13 @@ Rectangle {
                     radius: JuxTheme.radiusControl
                     color: closeMouse.containsMouse ? "#333333" : "transparent"
 
-                    Text {
+                    Image {
                         anchors.centerIn: parent
-                        text: "✕"
-                        color: JuxTheme.textSecondary
-                        font.pixelSize: 13
+                        width: 14
+                        height: 14
+                        source: Qt.resolvedUrl("../../resources/icons/close.svg")
+                        fillMode: Image.PreserveAspectFit
+                        smooth: true
                     }
 
                     MouseArea {
@@ -187,7 +189,7 @@ Rectangle {
                             }
 
                             Text {
-                                text: "💾 Save"
+                                text: qsTr("Save")
                                 color: JuxTheme.textPrimary
                                 font.pixelSize: 11
                             }

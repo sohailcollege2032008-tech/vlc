@@ -43,11 +43,12 @@ ApplicationWindow {
                 spacing: 12
 
                 // Left: Traffic Cone Logo + Menu Button
-                Text {
-                    text: "▲"
-                    color: JuxTheme.accent
-                    font.pixelSize: 18
-                    font.bold: true
+                Image {
+                    width: 22
+                    height: 22
+                    source: Qt.resolvedUrl("../modules/gui/qt/resources/icons/vlc.svg")
+                    fillMode: Image.PreserveAspectFit
+                    smooth: true
                 }
 
                 Rectangle {
@@ -56,11 +57,13 @@ ApplicationWindow {
                     radius: JuxTheme.radiusControl
                     color: menuMouse.containsMouse ? "#2a2a2b" : "transparent"
 
-                    Text {
+                    Image {
                         anchors.centerIn: parent
-                        text: "⋯"
-                        color: JuxTheme.textPrimary
-                        font.pixelSize: 16
+                        width: 18
+                        height: 18
+                        source: Qt.resolvedUrl("../modules/gui/qt/resources/icons/more.svg")
+                        fillMode: Image.PreserveAspectFit
+                        smooth: true
                     }
 
                     MouseArea {
@@ -73,11 +76,21 @@ ApplicationWindow {
                 }
 
                 // Show / Folder Breadcrumb
-                Text {
-                    text: "📁 The Wand  ❯  S01E05"
-                    color: JuxTheme.textSecondary
-                    font.family: JuxTheme.fontFamily
-                    font.pixelSize: 13
+                RowLayout {
+                    spacing: 6
+                    Image {
+                        width: 15
+                        height: 15
+                        source: Qt.resolvedUrl("../modules/gui/qt/resources/icons/folder.svg")
+                        fillMode: Image.PreserveAspectFit
+                        smooth: true
+                    }
+                    Text {
+                        text: "The Wand / S01E05"
+                        color: JuxTheme.textSecondary
+                        font.family: JuxTheme.fontFamily
+                        font.pixelSize: 13
+                    }
                 }
 
                 // Center Title
@@ -93,7 +106,7 @@ ApplicationWindow {
 
                 // Right: Window controls + Fullscreen icon
                 RowLayout {
-                    spacing: 8
+                    spacing: 10
 
                     Rectangle {
                         width: 26
@@ -101,11 +114,13 @@ ApplicationWindow {
                         radius: JuxTheme.radiusControl
                         color: fsMouse.containsMouse ? "#2a2a2b" : "transparent"
 
-                        Text {
+                        Image {
                             anchors.centerIn: parent
-                            text: "⛶"
-                            color: JuxTheme.textSecondary
-                            font.pixelSize: 14
+                            width: 16
+                            height: 16
+                            source: Qt.resolvedUrl("../modules/gui/qt/resources/icons/fullscreen.svg")
+                            fillMode: Image.PreserveAspectFit
+                            smooth: true
                         }
 
                         MouseArea {
@@ -122,9 +137,27 @@ ApplicationWindow {
                         }
                     }
 
-                    Text { text: "─"; color: JuxTheme.textSecondary; font.pixelSize: 14 }
-                    Text { text: "▢"; color: JuxTheme.textSecondary; font.pixelSize: 13 }
-                    Text { text: "✕"; color: JuxTheme.textSecondary; font.pixelSize: 13 }
+                    Image {
+                        width: 14
+                        height: 14
+                        source: Qt.resolvedUrl("../modules/gui/qt/resources/icons/minimize.svg")
+                        fillMode: Image.PreserveAspectFit
+                        smooth: true
+                    }
+                    Image {
+                        width: 14
+                        height: 14
+                        source: Qt.resolvedUrl("../modules/gui/qt/resources/icons/maximize.svg")
+                        fillMode: Image.PreserveAspectFit
+                        smooth: true
+                    }
+                    Image {
+                        width: 14
+                        height: 14
+                        source: Qt.resolvedUrl("../modules/gui/qt/resources/icons/close.svg")
+                        fillMode: Image.PreserveAspectFit
+                        smooth: true
+                    }
                 }
             }
         }
@@ -152,11 +185,13 @@ ApplicationWindow {
                     border.color: JuxTheme.accent
                     border.width: 2
 
-                    Text {
+                    Image {
                         anchors.centerIn: parent
-                        text: "▲"
-                        color: JuxTheme.accent
-                        font.pixelSize: 56
+                        width: 72
+                        height: 72
+                        source: Qt.resolvedUrl("../modules/gui/qt/resources/icons/vlc.svg")
+                        fillMode: Image.PreserveAspectFit
+                        smooth: true
                     }
                 }
 
@@ -171,7 +206,7 @@ ApplicationWindow {
 
                 Text {
                     Layout.alignment: Qt.AlignHCenter
-                    text: "Click gear ⚙ to toggle Quick Settings | Click 💬 to add subtitles | Click ⋯ for settings"
+                    text: "VLC Redesign interactive session • Full vector SVG icon suite loaded"
                     color: JuxTheme.textSecondary
                     font.family: JuxTheme.fontFamily
                     font.pixelSize: 13

@@ -60,11 +60,13 @@ T.Pane {
             radius: JuxTheme.radiusControl
             color: prevMouse.containsPress ? "#333333" : (prevMouse.containsMouse ? "#262626" : "transparent")
 
-            Text {
+            Image {
                 anchors.centerIn: parent
-                text: "⏮"
-                color: JuxTheme.textPrimary
-                font.pixelSize: 14
+                width: 16
+                height: 16
+                source: Qt.resolvedUrl("../../resources/icons/previous.svg")
+                fillMode: Image.PreserveAspectFit
+                smooth: true
             }
 
             MouseArea {
@@ -90,12 +92,13 @@ T.Pane {
 
             readonly property bool isPlaying: (typeof Player !== "undefined" && Player && Player.playingState === Player.PLAYING_STATE_PLAYING)
 
-            Text {
+            Image {
                 anchors.centerIn: parent
-                text: btnPlay.isPlaying ? "⏸" : "▶"
-                color: "#ffffff"
-                font.pixelSize: 16
-                font.bold: true
+                width: 18
+                height: 18
+                source: Qt.resolvedUrl("../../resources/icons/" + (btnPlay.isPlaying ? "pause.svg" : "play.svg"))
+                fillMode: Image.PreserveAspectFit
+                smooth: true
             }
 
             MouseArea {
@@ -118,11 +121,13 @@ T.Pane {
             radius: JuxTheme.radiusControl
             color: nextMouse.containsPress ? "#333333" : (nextMouse.containsMouse ? "#262626" : "transparent")
 
-            Text {
+            Image {
                 anchors.centerIn: parent
-                text: "⏭"
-                color: JuxTheme.textPrimary
-                font.pixelSize: 14
+                width: 16
+                height: 16
+                source: Qt.resolvedUrl("../../resources/icons/next.svg")
+                fillMode: Image.PreserveAspectFit
+                smooth: true
             }
 
             MouseArea {
@@ -242,11 +247,13 @@ T.Pane {
             radius: JuxTheme.radiusControl
             color: audioMouse.containsMouse ? "#262626" : "transparent"
 
-            Text {
+            Image {
                 anchors.centerIn: parent
-                text: "🔊"
-                color: JuxTheme.textPrimary
-                font.pixelSize: 14
+                width: 18
+                height: 18
+                source: Qt.resolvedUrl("../../resources/icons/audio.svg")
+                fillMode: Image.PreserveAspectFit
+                smooth: true
             }
 
             MouseArea {
@@ -266,11 +273,13 @@ T.Pane {
             radius: JuxTheme.radiusControl
             color: subMouse.containsMouse ? "#262626" : "transparent"
 
-            Text {
+            Image {
                 anchors.centerIn: parent
-                text: "💬"
-                color: JuxTheme.textPrimary
-                font.pixelSize: 14
+                width: 18
+                height: 18
+                source: Qt.resolvedUrl("../../resources/icons/subtitles.svg")
+                fillMode: Image.PreserveAspectFit
+                smooth: true
             }
 
             MouseArea {
@@ -290,11 +299,13 @@ T.Pane {
             radius: JuxTheme.radiusControl
             color: settingsMouse.containsMouse ? "#262626" : "transparent"
 
-            Text {
+            Image {
                 anchors.centerIn: parent
-                text: "⚙"
-                color: JuxTheme.textPrimary
-                font.pixelSize: 15
+                width: 18
+                height: 18
+                source: Qt.resolvedUrl("../../resources/icons/settings.svg")
+                fillMode: Image.PreserveAspectFit
+                smooth: true
             }
 
             MouseArea {
@@ -314,11 +325,13 @@ T.Pane {
             radius: JuxTheme.radiusControl
             color: queueMouse.containsMouse ? "#262626" : "transparent"
 
-            Text {
+            Image {
                 anchors.centerIn: parent
-                text: "☰"
-                color: JuxTheme.textPrimary
-                font.pixelSize: 15
+                width: 18
+                height: 18
+                source: Qt.resolvedUrl("../../resources/icons/queue.svg")
+                fillMode: Image.PreserveAspectFit
+                smooth: true
             }
 
             MouseArea {

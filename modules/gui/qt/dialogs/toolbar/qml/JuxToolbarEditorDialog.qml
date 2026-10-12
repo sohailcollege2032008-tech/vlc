@@ -54,11 +54,13 @@ Item {
                 border.color: Qt.rgba(255, 255, 255, 0.2)
                 radius: JuxTheme.radiusControl
 
-                Text {
+                RowLayout {
                     anchors.centerIn: parent
-                    text: "▲  ⋯  📁 S01"
-                    color: JuxTheme.textSecondary
-                    font.pixelSize: 11
+                    spacing: 8
+                    Image { width: 14; height: 14; source: Qt.resolvedUrl("../../../resources/icons/vlc.svg"); fillMode: Image.PreserveAspectFit; smooth: true }
+                    Image { width: 12; height: 12; source: Qt.resolvedUrl("../../../resources/icons/more.svg"); fillMode: Image.PreserveAspectFit; smooth: true }
+                    Image { width: 12; height: 12; source: Qt.resolvedUrl("../../../resources/icons/folder.svg"); fillMode: Image.PreserveAspectFit; smooth: true }
+                    Text { text: "S01"; color: JuxTheme.textSecondary; font.pixelSize: 11 }
                 }
             }
 
@@ -90,11 +92,13 @@ Item {
                 border.color: Qt.rgba(255, 255, 255, 0.2)
                 radius: JuxTheme.radiusControl
 
-                Text {
+                RowLayout {
                     anchors.centerIn: parent
-                    text: "⛶  ─  ▢  ✕"
-                    color: JuxTheme.textSecondary
-                    font.pixelSize: 11
+                    spacing: 8
+                    Image { width: 11; height: 11; source: Qt.resolvedUrl("../../../resources/icons/fullscreen.svg"); fillMode: Image.PreserveAspectFit; smooth: true }
+                    Image { width: 10; height: 10; source: Qt.resolvedUrl("../../../resources/icons/minimize.svg"); fillMode: Image.PreserveAspectFit; smooth: true }
+                    Image { width: 10; height: 10; source: Qt.resolvedUrl("../../../resources/icons/maximize.svg"); fillMode: Image.PreserveAspectFit; smooth: true }
+                    Image { width: 10; height: 10; source: Qt.resolvedUrl("../../../resources/icons/close.svg"); fillMode: Image.PreserveAspectFit; smooth: true }
                 }
             }
         }
@@ -123,11 +127,12 @@ Item {
                 border.color: Qt.rgba(255, 255, 255, 0.2)
                 radius: JuxTheme.radiusControl
 
-                Text {
+                RowLayout {
                     anchors.centerIn: parent
-                    text: "⏮  ▶  ⏭"
-                    color: JuxTheme.accent
-                    font.pixelSize: 14
+                    spacing: 10
+                    Image { width: 14; height: 14; source: Qt.resolvedUrl("../../../resources/icons/previous.svg"); fillMode: Image.PreserveAspectFit; smooth: true }
+                    Image { width: 16; height: 16; source: Qt.resolvedUrl("../../../resources/icons/play.svg"); fillMode: Image.PreserveAspectFit; smooth: true }
+                    Image { width: 14; height: 14; source: Qt.resolvedUrl("../../../resources/icons/next.svg"); fillMode: Image.PreserveAspectFit; smooth: true }
                 }
             }
 
@@ -153,11 +158,13 @@ Item {
                 border.color: Qt.rgba(255, 255, 255, 0.2)
                 radius: JuxTheme.radiusControl
 
-                Text {
+                RowLayout {
                     anchors.centerIn: parent
-                    text: "🔊  💬  ⚙  ☰"
-                    color: JuxTheme.textSecondary
-                    font.pixelSize: 14
+                    spacing: 12
+                    Image { width: 14; height: 14; source: Qt.resolvedUrl("../../../resources/icons/volume.svg"); fillMode: Image.PreserveAspectFit; smooth: true }
+                    Image { width: 14; height: 14; source: Qt.resolvedUrl("../../../resources/icons/subtitles.svg"); fillMode: Image.PreserveAspectFit; smooth: true }
+                    Image { width: 14; height: 14; source: Qt.resolvedUrl("../../../resources/icons/settings.svg"); fillMode: Image.PreserveAspectFit; smooth: true }
+                    Image { width: 14; height: 14; source: Qt.resolvedUrl("../../../resources/icons/queue.svg"); fillMode: Image.PreserveAspectFit; smooth: true }
                 }
             }
         }
@@ -208,11 +215,13 @@ Item {
                     radius: JuxTheme.radiusControl
                     color: closeMouse.containsMouse ? "#2b2b2b" : "transparent"
 
-                    Text {
+                    Image {
                         anchors.centerIn: parent
-                        text: "✕"
-                        color: JuxTheme.textSecondary
-                        font.pixelSize: 14
+                        width: 14
+                        height: 14
+                        source: Qt.resolvedUrl("../../../resources/icons/close.svg")
+                        fillMode: Image.PreserveAspectFit
+                        smooth: true
                     }
 
                     MouseArea {
@@ -241,37 +250,33 @@ Item {
                     Repeater {
                         id: toolsRepeater
                         model: [
-                            { name: "Spacer", icon: "␣" },
-                            { name: "Divider", icon: "|" },
-                            { name: "Playback Speed", icon: "⏱" },
-                            { name: "Forward 10s", icon: "⟳10" },
-                            { name: "Backward 10s", icon: "⟲10" },
-                            { name: "Forward 15s", icon: "⟳15" },
-                            { name: "Backward 15s", icon: "⟲15" },
-                            { name: "Stop", icon: "⏹" },
-                            { name: "Repeat", icon: "🔁" },
-                            { name: "Shuffle", icon: "🔀" },
-                            { name: "Record", icon: "⏺" },
-                            { name: "Snapshot", icon: "📷" },
-                            { name: "Picture in Picture", icon: "⧉" },
-                            { name: "HDR", icon: "HDR" },
-                            { name: "Zoom", icon: "🔍" },
-                            { name: "Right Sidebar", icon: "◫" },
-                            { name: "Quit VLC", icon: "⏻" },
-                            { name: "VLC Settings", icon: "⚙" },
-                            { name: "Go Home", icon: "🏠" },
-                            { name: "Thumbnail", icon: "🖼" },
-                            { name: "File Name", icon: "🗎" },
-                            { name: "Artist Name", icon: "👤" },
-                            { name: "Folder Name", icon: "📁" },
-                            { name: "Playlist Name", icon: "📜" },
-                            { name: "Properties", icon: "ℹ" },
-                            { name: "Replay", icon: "↺" },
-                            { name: "Chapters", icon: "📑" },
-                            { name: "Favorite", icon: "♥" },
-                            { name: "Bookmark", icon: "🔖" },
-                            { name: "Bookmarks", icon: "🏷" },
-                            { name: "Playlists", icon: "📋" }
+                            { name: "Playback Speed", icon: "speed" },
+                            { name: "Forward 15s", icon: "forward-15" },
+                            { name: "Backward 15s", icon: "backward-15" },
+                            { name: "Stop", icon: "stop" },
+                            { name: "Repeat", icon: "repeat" },
+                            { name: "Shuffle", icon: "shuffle" },
+                            { name: "Record", icon: "record" },
+                            { name: "Snapshot", icon: "snapshot" },
+                            { name: "Picture in Picture", icon: "pip" },
+                            { name: "Zoom / Search", icon: "search" },
+                            { name: "VLC Settings", icon: "settings" },
+                            { name: "Go Home", icon: "home" },
+                            { name: "Folder Name", icon: "folder" },
+                            { name: "Properties", icon: "info" },
+                            { name: "Favorite", icon: "favorite" },
+                            { name: "Bookmark", icon: "bookmark" },
+                            { name: "Playlists", icon: "playlists" },
+                            { name: "Recent", icon: "recent" },
+                            { name: "Fullscreen", icon: "fullscreen" },
+                            { name: "Audio Track", icon: "audio" },
+                            { name: "Subtitles", icon: "subtitles" },
+                            { name: "Volume", icon: "volume" },
+                            { name: "Network", icon: "network" },
+                            { name: "Media Queue", icon: "queue" },
+                            { name: "Grid View", icon: "grid" },
+                            { name: "List View", icon: "list" },
+                            { name: "Sort Order", icon: "sort" }
                         ]
 
                         Rectangle {
@@ -286,11 +291,13 @@ Item {
                                 anchors.centerIn: parent
                                 spacing: 4
 
-                                Text {
+                                Image {
                                     Layout.alignment: Qt.AlignHCenter
-                                    text: modelData.icon
-                                    color: JuxTheme.textPrimary
-                                    font.pixelSize: 18
+                                    width: 22
+                                    height: 22
+                                    source: Qt.resolvedUrl("../../../resources/icons/" + modelData.icon + ".svg")
+                                    fillMode: Image.PreserveAspectFit
+                                    smooth: true
                                 }
 
                                 Text {

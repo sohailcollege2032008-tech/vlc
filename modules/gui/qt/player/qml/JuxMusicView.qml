@@ -54,24 +54,37 @@ Item {
         spacing: 12
         z: 10
 
-        Text {
-            text: "▲"
-            color: JuxTheme.accent
-            font.pixelSize: 18
-            font.bold: true
+        Image {
+            width: 20
+            height: 20
+            source: Qt.resolvedUrl("../../resources/icons/vlc.svg")
+            fillMode: Image.PreserveAspectFit
+            smooth: true
         }
 
-        Text {
-            text: "⋯"
-            color: JuxTheme.textSecondary
-            font.pixelSize: 16
+        Image {
+            width: 16
+            height: 16
+            source: Qt.resolvedUrl("../../resources/icons/more.svg")
+            fillMode: Image.PreserveAspectFit
+            smooth: true
         }
 
-        Text {
-            text: "📁 My Songs"
-            color: JuxTheme.textSecondary
-            font.family: JuxTheme.fontFamily
-            font.pixelSize: 13
+        RowLayout {
+            spacing: 6
+            Image {
+                width: 14
+                height: 14
+                source: Qt.resolvedUrl("../../resources/icons/folder.svg")
+                fillMode: Image.PreserveAspectFit
+                smooth: true
+            }
+            Text {
+                text: "My Songs"
+                color: JuxTheme.textSecondary
+                font.family: JuxTheme.fontFamily
+                font.pixelSize: 13
+            }
         }
 
         Item { Layout.fillWidth: true }
@@ -86,9 +99,30 @@ Item {
 
         Item { Layout.fillWidth: true }
 
-        Text { text: "─"; color: JuxTheme.textSecondary; font.pixelSize: 14 }
-        Text { text: "▢"; color: JuxTheme.textSecondary; font.pixelSize: 13 }
-        Text { text: "✕"; color: JuxTheme.textSecondary; font.pixelSize: 13 }
+        RowLayout {
+            spacing: 8
+            Image {
+                width: 12
+                height: 12
+                source: Qt.resolvedUrl("../../resources/icons/minimize.svg")
+                fillMode: Image.PreserveAspectFit
+                smooth: true
+            }
+            Image {
+                width: 12
+                height: 12
+                source: Qt.resolvedUrl("../../resources/icons/maximize.svg")
+                fillMode: Image.PreserveAspectFit
+                smooth: true
+            }
+            Image {
+                width: 12
+                height: 12
+                source: Qt.resolvedUrl("../../resources/icons/close.svg")
+                fillMode: Image.PreserveAspectFit
+                smooth: true
+            }
+        }
     }
 
     // Center Content: Album Cover & Track Info
@@ -195,7 +229,7 @@ Item {
                     "black bird - juxtopposed"
                 ]
                 delegate: Rectangle {
-                    width: parent.width
+                    width: ListView.view ? ListView.view.width : 280
                     height: 38
                     color: index === 0 ? Qt.rgba(232/255, 133/255, 12/255, 0.15) : "transparent"
                     radius: JuxTheme.radiusControl
@@ -203,8 +237,13 @@ Item {
                     RowLayout {
                         anchors.fill: parent
                         anchors.margins: 8
-                        spacing: 8
-                        Text { text: "🎵"; color: index === 0 ? JuxTheme.accent : JuxTheme.textSecondary; font.pixelSize: 12 }
+                        Image {
+                            width: 14
+                            height: 14
+                            source: Qt.resolvedUrl("../../resources/icons/music.svg")
+                            fillMode: Image.PreserveAspectFit
+                            smooth: true
+                        }
                         Text { text: modelData; color: index === 0 ? JuxTheme.accent : JuxTheme.textPrimary; font.pixelSize: 12 }
                     }
                 }
@@ -232,8 +271,20 @@ Item {
             RowLayout {
                 spacing: 8
 
-                Text { text: "⏮"; color: JuxTheme.textSecondary; font.pixelSize: 14 }
-                Text { text: "⟲15"; color: JuxTheme.textSecondary; font.pixelSize: 12 }
+                Image {
+                    width: 16
+                    height: 16
+                    source: Qt.resolvedUrl("../../resources/icons/previous.svg")
+                    fillMode: Image.PreserveAspectFit
+                    smooth: true
+                }
+                Image {
+                    width: 16
+                    height: 16
+                    source: Qt.resolvedUrl("../../resources/icons/backward-15.svg")
+                    fillMode: Image.PreserveAspectFit
+                    smooth: true
+                }
 
                 Rectangle {
                     width: 38
@@ -241,11 +292,13 @@ Item {
                     radius: JuxTheme.radiusHeroPlay
                     color: JuxTheme.accent
 
-                    Text {
+                    Image {
                         anchors.centerIn: parent
-                        text: root.isPlaying ? "❚❚" : "▶"
-                        color: "#ffffff"
-                        font.pixelSize: 14
+                        width: 16
+                        height: 16
+                        source: Qt.resolvedUrl(root.isPlaying ? "../../resources/icons/pause.svg" : "../../resources/icons/play.svg")
+                        fillMode: Image.PreserveAspectFit
+                        smooth: true
                     }
 
                     MouseArea {
@@ -258,8 +311,20 @@ Item {
                     }
                 }
 
-                Text { text: "⟳15"; color: JuxTheme.textSecondary; font.pixelSize: 12 }
-                Text { text: "⏭"; color: JuxTheme.textSecondary; font.pixelSize: 14 }
+                Image {
+                    width: 16
+                    height: 16
+                    source: Qt.resolvedUrl("../../resources/icons/forward-15.svg")
+                    fillMode: Image.PreserveAspectFit
+                    smooth: true
+                }
+                Image {
+                    width: 16
+                    height: 16
+                    source: Qt.resolvedUrl("../../resources/icons/next.svg")
+                    fillMode: Image.PreserveAspectFit
+                    smooth: true
+                }
             }
 
             Text {
@@ -319,8 +384,20 @@ Item {
             }
 
             // Secondary triggers
-            Text { text: "💬"; color: JuxTheme.textSecondary; font.pixelSize: 14 }
-            Text { text: "⚙"; color: JuxTheme.textSecondary; font.pixelSize: 14 }
+            Image {
+                width: 16
+                height: 16
+                source: Qt.resolvedUrl("../../resources/icons/subtitles.svg")
+                fillMode: Image.PreserveAspectFit
+                smooth: true
+            }
+            Image {
+                width: 16
+                height: 16
+                source: Qt.resolvedUrl("../../resources/icons/settings.svg")
+                fillMode: Image.PreserveAspectFit
+                smooth: true
+            }
 
             Rectangle {
                 width: 28
@@ -328,11 +405,13 @@ Item {
                 radius: JuxTheme.radiusControl
                 color: queueMouse.containsMouse ? "#242424" : "transparent"
 
-                Text {
+                Image {
                     anchors.centerIn: parent
-                    text: "☰"
-                    color: root.isPlaylistOpen ? JuxTheme.accent : JuxTheme.textSecondary
-                    font.pixelSize: 14
+                    width: 16
+                    height: 16
+                    source: Qt.resolvedUrl("../../resources/icons/queue.svg")
+                    fillMode: Image.PreserveAspectFit
+                    smooth: true
                 }
 
                 MouseArea {

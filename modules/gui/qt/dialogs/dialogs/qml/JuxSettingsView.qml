@@ -27,19 +27,19 @@ Rectangle {
     border.width: 1
 
     readonly property var categories: [
-        { group: "App", name: "General", icon: "⚙" },
-        { group: "App", name: "Interface", icon: "🪟" },
-        { group: "App", name: "Privacy", icon: "🛡" },
-        { group: "App", name: "Controls", icon: "⌨" },
-        { group: "Media", name: "Playback", icon: "▶" },
-        { group: "Media", name: "Video", icon: "🎬" },
-        { group: "Media", name: "Audio", icon: "🔊" },
-        { group: "Media", name: "Subtitles", icon: "💬" },
-        { group: "Media", name: "Library", icon: "📁" },
-        { group: "System", name: "Network", icon: "🌐" },
-        { group: "System", name: "Performance", icon: "⚡" },
-        { group: "System", name: "Recording", icon: "⏺" },
-        { group: "System", name: "Extensions", icon: "🧩" }
+        { group: "App", name: "General", icon: "settings" },
+        { group: "App", name: "Interface", icon: "interface" },
+        { group: "App", name: "Privacy", icon: "privacy" },
+        { group: "App", name: "Controls", icon: "controls" },
+        { group: "Media", name: "Playback", icon: "play" },
+        { group: "Media", name: "Video", icon: "videos" },
+        { group: "Media", name: "Audio", icon: "audio" },
+        { group: "Media", name: "Subtitles", icon: "subtitles" },
+        { group: "Media", name: "Library", icon: "folder" },
+        { group: "System", name: "Network", icon: "network" },
+        { group: "System", name: "Performance", icon: "performance" },
+        { group: "System", name: "Recording", icon: "record" },
+        { group: "System", name: "Extensions", icon: "extensions" }
     ]
 
     readonly property var subtitleAutodetectOptions: [
@@ -106,10 +106,12 @@ Rectangle {
                             anchors.leftMargin: 12
                             spacing: 10
 
-                            Text {
-                                text: modelData.icon
-                                color: (root.activeCategoryIndex === index) ? JuxTheme.accent : JuxTheme.textSecondary
-                                font.pixelSize: 14
+                            Image {
+                                width: 16
+                                height: 16
+                                source: Qt.resolvedUrl("../../../resources/icons/" + modelData.icon + ".svg")
+                                fillMode: Image.PreserveAspectFit
+                                smooth: true
                             }
 
                             Text {
@@ -164,11 +166,13 @@ Rectangle {
                         radius: JuxTheme.radiusControl
                         color: closeMouse.containsMouse ? "#333333" : "transparent"
 
-                        Text {
+                        Image {
                             anchors.centerIn: parent
-                            text: "✕"
-                            color: JuxTheme.textSecondary
-                            font.pixelSize: 14
+                            width: 14
+                            height: 14
+                            source: Qt.resolvedUrl("../../../resources/icons/close.svg")
+                            fillMode: Image.PreserveAspectFit
+                            smooth: true
                         }
 
                         MouseArea {
