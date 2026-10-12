@@ -1,0 +1,52 @@
+name: Build VLC Windows x64 (Jux Redesign)
+
+on:
+  push:
+    branches:
+      - jux-redesign
+    paths:
+      - 'modules/gui/qt/**'
+      - '.github/workflows/build-windows.yml'
+  workflow_dispatch:
+
+jobs:
+  build-win64:
+    name: Build VLC Win64 Package
+    runs-on: ubuntu-latest
+    container:
+      image: registry.videolan.org/vlc-debian-win64-posix:20260611225331
+      options: --user root
+
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 50
+
+      - name: Prepare Git Safe Directory
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - name: Run Win64 Build with Prebuilt Contribs
+        env:
+          HOST_ARCH: x86_64
+          SHORTARCH: win64
+          VLCARCH: win64
+        run: |
+          export JOBS=$(nproc)
+          extras/package/win32/build.sh -a x86_64 -p -i u -x
+
+      - name: Package Build Artifacts
+        run: |
+          mkdir -p dist
+          find win64 -maxdepth 2 -type f \( -name "*.7z" -o -name "*.zip" -o -name "*.exe" \) -exec cp {} dist/ \; || true
+          ls -lah dist/
+
+      - name: Upload Windows Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: vlc-win64-jux-redesign
+          path: dist/*
+          retention-days: 14
+          if-no-files-found: warn

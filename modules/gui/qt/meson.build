@@ -612,6 +612,8 @@ qml_modules += {
         'dialogs/dialogs/qml/CustomDialog.qml',
         'dialogs/dialogs/qml/Dialogs.qml',
         'dialogs/dialogs/qml/ModalDialog.qml',
+        'dialogs/dialogs/qml/JuxAddSubtitlesDialog.qml',
+        'dialogs/dialogs/qml/JuxSettingsView.qml',
         'dialogs/dialogs/qml/WindowDialog.qml',
         'dialogs/toolbar/qml/EditorDNDDelegate.qml',
         'dialogs/toolbar/qml/EditorDNDView.qml',
@@ -733,6 +735,8 @@ qml_modules += {
    'outdir' : 'VLC/Player',
    'sources': files(
        'player/qml/ControlBar.qml',
+       'player/qml/JuxControlBar.qml',
+       'player/qml/JuxQuickSettingsSidebar.qml',
        'player/qml/PlaybackSpeed.qml',
        'player/qml/LyricsFlickable.qml',
        'player/qml/MiniPlayer.qml',
@@ -830,6 +834,7 @@ qml_modules += {
     'outdir' : 'VLC/Style',
     'singletons': files(
         'style/AcrylicController.qml',
+        'style/JuxTheme.qml',
         'style/VLCStyle.qml',
     ),
 }
@@ -870,6 +875,7 @@ qml_modules += {
         'widgets/qml/CheckButton.qml',
         'widgets/qml/CheckedDelegate.qml',
         'widgets/qml/ComboBoxExt.qml',
+        'widgets/qml/JuxVolumeCone.qml',
         'widgets/qml/AcrylicBackground.qml',
         'widgets/qml/FloatingNotification.qml',
         'widgets/qml/AnimatedBackground.qml',

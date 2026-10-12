@@ -1038,6 +1038,8 @@ libqml_module_dialogs_a_QML = \
 	dialogs/dialogs/qml/CustomDialog.qml \
 	dialogs/dialogs/qml/Dialogs.qml \
 	dialogs/dialogs/qml/ModalDialog.qml \
+	dialogs/dialogs/qml/JuxAddSubtitlesDialog.qml \
+	dialogs/dialogs/qml/JuxSettingsView.qml \
 	dialogs/dialogs/qml/WindowDialog.qml \
 	dialogs/toolbar/qml/EditorDNDDelegate.qml \
 	dialogs/toolbar/qml/EditorDNDView.qml\
@@ -1167,6 +1169,8 @@ libqml_module_player_a_CXXFLAGS = $(libqt_plugin_la_CXXFLAGS)
 libqml_module_player_a_CPPFLAGS = $(libqt_plugin_la_CPPFLAGS)
 libqml_module_player_a_QML = \
 	player/qml/ControlBar.qml \
+	player/qml/JuxControlBar.qml \
+	player/qml/JuxQuickSettingsSidebar.qml \
 	player/qml/PlaybackSpeed.qml \
 	player/qml/LyricsFlickable.qml \
 	player/qml/MiniPlayer.qml \
@@ -1270,6 +1274,7 @@ libqml_module_style_a_CPPFLAGS = $(libqt_plugin_la_CPPFLAGS)
 libqml_module_style_a_QML =
 libqml_module_style_a_Singleton_QML = \
 	style/AcrylicController.qml \
+	style/JuxTheme.qml \
 	style/VLCStyle.qml
 libqml_module_style_a_SOURCES = $(QML_MODULE_style_SRC)
 nodist_libqml_module_style_a_SOURCES = style/qmlassets.cpp $(QML_MODULE_style_NODIST_EXTRA)
@@ -1311,6 +1316,7 @@ libqml_module_widgets_a_QML = \
 	widgets/qml/CheckButton.qml \
 	widgets/qml/CheckedDelegate.qml \
 	widgets/qml/ComboBoxExt.qml \
+	widgets/qml/JuxVolumeCone.qml \
 	widgets/qml/AcrylicBackground.qml \
 	widgets/qml/FloatingNotification.qml \
 	widgets/qml/AnimatedBackground.qml \
