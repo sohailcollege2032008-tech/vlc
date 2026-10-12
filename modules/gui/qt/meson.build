@@ -621,7 +621,8 @@ qml_modules += {
         'dialogs/toolbar/qml/EditorTabButton.qml',
         'dialogs/toolbar/qml/ToolbarEditor.qml',
         'dialogs/toolbar/qml/ToolbarEditorDialog.qml',
-        'dialogs/toolbar/qml/ToolbarEditorButtonList.qml'
+        'dialogs/toolbar/qml/ToolbarEditorButtonList.qml',
+        'dialogs/toolbar/qml/JuxToolbarEditorDialog.qml'
     ),
 }
 
@@ -657,6 +658,7 @@ qml_modules += {
         'medialibrary/qml/AudioGridItem.qml',
         'medialibrary/qml/HomeDisplay.qml',
         'medialibrary/qml/HomePage.qml',
+        'medialibrary/qml/JuxMediaLibraryView.qml',
         'medialibrary/qml/MediaView.qml',
         'medialibrary/qml/VideoGroupDisplay.qml',
         'medialibrary/qml/MusicAlbums.qml',
@@ -736,6 +738,7 @@ qml_modules += {
    'sources': files(
        'player/qml/ControlBar.qml',
        'player/qml/JuxControlBar.qml',
+       'player/qml/JuxMusicView.qml',
        'player/qml/JuxQuickSettingsSidebar.qml',
        'player/qml/PlaybackSpeed.qml',
        'player/qml/LyricsFlickable.qml',

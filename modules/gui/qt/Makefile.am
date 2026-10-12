@@ -1047,7 +1047,8 @@ libqml_module_dialogs_a_QML = \
 	dialogs/toolbar/qml/EditorTabButton.qml \
 	dialogs/toolbar/qml/ToolbarEditor.qml \
 	dialogs/toolbar/qml/ToolbarEditorDialog.qml \
-	dialogs/toolbar/qml/ToolbarEditorButtonList.qml
+	dialogs/toolbar/qml/ToolbarEditorButtonList.qml \
+	dialogs/toolbar/qml/JuxToolbarEditorDialog.qml
 libqml_module_dialogs_a_Singleton_QML =
 libqml_module_dialogs_a_SOURCES = $(QML_MODULE_dialogs_SRC)
 nodist_libqml_module_dialogs_a_SOURCES = dialogs/qmlassets.cpp $(QML_MODULE_dialogs_NODIST_EXTRA)
@@ -1120,6 +1121,7 @@ libqml_module_medialibrary_a_QML = \
 	medialibrary/qml/MLContextMenu.qml \
 	medialibrary/qml/MLDragItem.qml \
 	medialibrary/qml/MLTableColumns.qml \
+	medialibrary/qml/JuxMediaLibraryView.qml \
 	medialibrary/qml/ScanProgressBar.qml
 libqml_module_medialibrary_a_Singleton_QML =
 libqml_module_medialibrary_a_SOURCES = $(QML_MODULE_medialibrary_SRC)
@@ -1170,6 +1172,7 @@ libqml_module_player_a_CPPFLAGS = $(libqt_plugin_la_CPPFLAGS)
 libqml_module_player_a_QML = \
 	player/qml/ControlBar.qml \
 	player/qml/JuxControlBar.qml \
+	player/qml/JuxMusicView.qml \
 	player/qml/JuxQuickSettingsSidebar.qml \
 	player/qml/PlaybackSpeed.qml \
 	player/qml/LyricsFlickable.qml \

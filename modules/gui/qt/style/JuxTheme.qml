@@ -13,6 +13,7 @@ QtObject {
     // Backgrounds (Figma tokens)
     readonly property color bgB1: "#0e0e0e"
     readonly property color bgB1Transparent: Qt.rgba(14/255, 14/255, 14/255, 0.95)
+    readonly property color bgB2: "#141414"
     readonly property color bgA3Transparent: Qt.rgba(25/255, 25/255, 25/255, 0.95)
     readonly property color bgPlayer: "#1b1b1b"
     readonly property color bgVideo: "#303030"
@@ -22,6 +23,7 @@ QtObject {
     // Text & Foreground
     readonly property color textPrimary: "#ffffff"
     readonly property color textSecondary: "#a0a0a0"
+    readonly property color textTertiary: "#777777"
     readonly property color textMuted: "#666666"
 
     // Accent Colors
@@ -40,10 +42,12 @@ QtObject {
 
     // Border Radii (Figma parameters: "rectangular but less sharp")
     readonly property int radiusDialog: 14
+    readonly property int radiusModal: 14
     readonly property int radiusMenu: 10
     readonly property int radiusControl: 6
     readonly property int radiusToggle: 12
     readonly property int radiusCard: 10
+    readonly property int radiusHeroPlay: 8
     readonly property int radiusSmall: 4
 
     // Metric dimensions

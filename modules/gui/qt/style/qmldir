@@ -1,0 +1,2 @@
+module VLC.Style
+singleton JuxTheme 1.0 JuxTheme.qml
