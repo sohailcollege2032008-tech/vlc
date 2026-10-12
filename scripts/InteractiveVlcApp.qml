@@ -18,6 +18,7 @@ Window {
     minimumHeight: 600
     title: "VLC Media Player - Reimagined (Jux Redesign)"
     color: "#0a0a0c"
+    flags: Qt.Window | Qt.WindowStaysOnTopHint
 
     property int currentViewIndex: 0 // 0: Video Player, 1: Music Player, 2: Media Library, 3: Toolbar Editor
 
