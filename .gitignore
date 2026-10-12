@@ -65,4 +65,7 @@ static-lib/
 !extras/package/apple/build.sh
 
 design-refs/
+screenshots/
+__pycache__/
+*.pyc
 

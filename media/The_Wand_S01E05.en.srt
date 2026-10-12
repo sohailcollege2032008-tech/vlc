@@ -1,0 +1,27 @@
+1
+00:00:01,000 --> 00:00:04,500
+Welcome to VLC Media Player Reimagined.
+
+2
+00:00:05,000 --> 00:00:09,000
+Designed by Jux • Redesigned for VideoLAN.
+
+3
+00:00:10,000 --> 00:00:15,000
+Episode 5: The Wand - High Fidelity Native Playback.
+
+4
+00:00:16,000 --> 00:00:22,000
+Smart Subtitles Engine has automatically matched this file!
+
+5
+00:00:23,000 --> 00:00:30,000
+Thick scrub bar, cone volume, and quick settings are fully active.
+
+6
+00:00:31,000 --> 00:00:45,000
+10-Band Equalizer and Hardware Video Adjustments working in real time.
+
+7
+00:00:46,000 --> 00:00:58,000
+Production-grade VLC Redesign by Sohail Ahmed.
